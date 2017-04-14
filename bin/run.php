@@ -14,6 +14,9 @@ $notification = new Notification();
 
 $notification
     ->to('fzmIMSUIm0c:APA91bHbZxTdvQmgEEq6cPJ9-HZkSKcDXIJQ9pIvcQfSTW78bq7fV8aiBC4rCB-U7Stzos0kFH4sikGbQL9re_Z4bEMLlubdGLjypA9WMD-dTtRRwX8CX53Y3KMxKD7lPantsuHZOzFb')
-    ->title('New notification class');
+    ->title('New notification class')
+    ->body('Nice big body')
+    ->icon('http://link-to-resource.jpg')
+    ->data(['some' => 'data']);
 
 $handler->send($notification);

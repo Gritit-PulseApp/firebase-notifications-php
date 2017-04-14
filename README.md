@@ -13,7 +13,10 @@ $notification = new Notification();
 
 $notification
     ->to('DEVICE_ID')
-    ->title('Awesome title');
+    ->title('Awesome title')
+    ->body('Nice big body')
+    ->icon('http://link-to-resource.jpg')
+    ->data(['some' => 'data']);
 
 $handler->send($notification);
 ```
