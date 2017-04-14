@@ -1,0 +1,25 @@
+{
+  "name": "Firebase/notifications",
+  "description": "Firebase notification delivery service in php",
+  "type": "library",
+  "license": "Proprietary",
+  "authors": [
+    {
+      "name": "George Hallam",
+      "email": "george_hallam@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Firebase\\Notifications\\": "src"
+    }
+  },
+  "require": {
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "require-dev": {
+  },
+  "repositories": [
+
+  ]
+}
