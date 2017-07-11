@@ -39,42 +39,12 @@ class Notification
     }
 
     /**
-     * @param string $title
-     * @return Notification $this
-     */
-    public function title($title)
-    {
-        $this->notification['data']['title'] = $title;
-        return $this;
-    }
-
-    /**
-     * @param string $body
-     * @return Notification $this
-     */
-    public function body($body)
-    {
-        $this->notification['data']['alert'] = $body;
-        return $this;
-    }
-
-    /**
-     * @param string $icon
-     * @return Notification $this
-     */
-    public function icon($icon)
-    {
-        $this->notification['data']['badge'] = $icon;
-        return $this;
-    }
-
-    /**
      * @param array $data
      * @return Notification $this
      */
     public function data(array $data)
     {
-        $this->notification['data'] = array_merge_recursive($this->notification, $data);
+        $this->notification['data'] = $data;
         return $this;
     }
 
