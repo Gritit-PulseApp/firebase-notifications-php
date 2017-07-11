@@ -13,10 +13,10 @@ $handler = new \Firebase\Notifications\Handler\FirebaseNotificationHandler($key)
 $notification = new Notification();
 
 $notification
-    ->to('fzmIMSUIm0c:APA91bHbZxTdvQmgEEq6cPJ9-HZkSKcDXIJQ9pIvcQfSTW78bq7fV8aiBC4rCB-U7Stzos0kFH4sikGbQL9re_Z4bEMLlubdGLjypA9WMD-dTtRRwX8CX53Y3KMxKD7lPantsuHZOzFb')
+    ->to('d6Y6yFyL-nU:APA91bGRU8l1zo5skKC-5MnFcAb2fw3dWjnMoZMPtYoHQpQTifEIPSlcm6iTEK6rx-2I9pX2T4KDeu0i78NxACer-ZGU5qaD8zRfB67Bpp1OtWJggr6sQieO4rM94b83ARbSlOY7P9Wa')
     ->title('New notification class')
     ->body('Nice big body')
-    ->icon('http://link-to-resource.jpg')
+    ->icon('https://pbs.twimg.com/profile_images/1831635783/Cat_Icon_smaller_400x400.jpg')
     ->data(['some' => 'data']);
 
 $handler->send($notification);

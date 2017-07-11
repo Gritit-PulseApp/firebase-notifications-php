@@ -44,7 +44,7 @@ class Notification
      */
     public function title($title)
     {
-        $this->notification['notification']['title'] = $title;
+        $this->notification['data']['title'] = $title;
         return $this;
     }
 
@@ -54,7 +54,7 @@ class Notification
      */
     public function body($body)
     {
-        $this->notification['notification']['body'] = $body;
+        $this->notification['data']['alert'] = $body;
         return $this;
     }
 
@@ -64,7 +64,7 @@ class Notification
      */
     public function icon($icon)
     {
-        $this->notification['notification']['icon'] = $icon;
+        $this->notification['data']['badge'] = $icon;
         return $this;
     }
 
@@ -74,7 +74,7 @@ class Notification
      */
     public function data(array $data)
     {
-        $this->notification['data'] = $data;
+        $this->notification['data'] = array_merge($this->notification, $data);
         return $this;
     }
 
@@ -87,7 +87,7 @@ class Notification
         if (!isset($this->notification['to'])) {
             throw new NotificationParameterException('Missing \'to\' value');
         }
-        if (!isset($this->notification['notification']['title'])) {
+        if (!isset($this->notification['data']['title'])) {
             throw new NotificationParameterException('Missing \'title\' value');
         }
 
