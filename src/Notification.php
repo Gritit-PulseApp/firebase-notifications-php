@@ -74,7 +74,7 @@ class Notification
      */
     public function data(array $data)
     {
-        $this->notification['data'] = array_merge($this->notification, $data);
+        $this->notification['data'] = array_merge_recursive($this->notification, $data);
         return $this;
     }
 
@@ -87,10 +87,6 @@ class Notification
         if (!isset($this->notification['to'])) {
             throw new NotificationParameterException('Missing \'to\' value');
         }
-        if (!isset($this->notification['data']['title'])) {
-            throw new NotificationParameterException('Missing \'title\' value');
-        }
-
         return $this->notification;
     }
 
