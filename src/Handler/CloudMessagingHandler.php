@@ -9,23 +9,17 @@ use GuzzleHttp\Psr7\Request;
  * Class FirebaseNotificationHandler
  * @package Firebase\Notifications\Handler
  * @author George Hallam
- * @deprecated 
- * @see FirebaseCloudMessagingHandler
  */
-class FirebaseNotificationHandler extends BaseHandler
+class CloudMessagingHandler extends BaseHandler
 {
-    const FIREBASE_SEND_URL = 'https://fcm.googleapis.com/fcm/send';
-
-    protected $authorisationKey;
-    protected $headers = [];
-    protected $client;
+    const FIREBASE_SEND_URL = 'https://fcm.googleapis.com/v1/projects/myproject-b5ae1/messages:send';
 
     /**
      * @param string $authorisationKey
      */
-    public function setAuthHeader($authorisationKey)
+    protected function setAuthHeader($authorisationKey)
     {
-        $this->headers['Authorization'] = 'key=' . $authorisationKey;
+        $this->headers['Authorization'] = 'Bearer ' . $authorisationKey;
     }
 
     /**
