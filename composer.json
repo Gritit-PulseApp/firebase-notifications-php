@@ -1,5 +1,5 @@
 {
-  "name": "Firebase/notifications",
+  "name": "firebase/notifications",
   "description": "Firebase notification delivery service in php",
   "type": "library",
   "license": "Proprietary",
