@@ -9,7 +9,7 @@ use Firebase\Notifications\Exceptions\NotificationParameterException;
  * @package Firebase\Notifications
  * @author George Hallam
  */
-class Notification
+class Notification implements BaseMessage
 {
 
     protected $notification;

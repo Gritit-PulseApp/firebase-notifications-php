@@ -2,6 +2,7 @@
 
 namespace Firebase\Notifications\Handler;
 
+use Firebase\Notifications\Notification;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 
@@ -34,5 +35,16 @@ class FirebaseNotificationHandler extends BaseHandler
     protected function getSendUrl()
     {
         return static::FIREBASE_SEND_URL;
+    }
+
+    /**
+     * @param Notification $notification
+     * @return mixed|\Psr\Http\Message\ResponseInterface
+     */
+    public function send(Notification $notification)
+    {
+        $headers = $this->headers;
+        $request = new Request('POST', $this->getSendUrl(), $headers, $notification->getNotificationPayload());
+        return $this->client->send($request, ['timeout' => 1]);
     }
 }
