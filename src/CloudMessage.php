@@ -76,6 +76,15 @@ class CloudMessage implements BaseMessage
         $this->message['notification'] = $notification;
         return $this;
     }
+    /**
+     * @param string $name
+     * @return static $this
+     */
+    public function name($name)
+    {
+        $this->message['name'] = $name;
+        return $this;
+    }
 
     /**
      * @param array $android
