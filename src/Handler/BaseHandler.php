@@ -70,8 +70,8 @@ abstract class BaseHandler
 
 
     /**
-     * @param BaseMessage $notification
+     * @param $notification
      * @return mixed|\Psr\Http\Message\ResponseInterface
      */
-    abstract public function send(BaseMessage $notification);
+    abstract public function send($notification);
 }

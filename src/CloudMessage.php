@@ -48,8 +48,8 @@ class CloudMessage implements BaseMessage
         }
 
         //Only allowed one target see: https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#resource:-message
-        foreach ($this->validTargets as $target) {
-            unset($this->message[$target]);
+        foreach ($this->validTargets as $validTarget) {
+            unset($this->message[$validTarget]);
         }
 
         $this->targetSet = true;
@@ -73,7 +73,17 @@ class CloudMessage implements BaseMessage
      */
     public function notification(array $notification)
     {
-        $this->message['data'] = $data;
+        $this->message['notification'] = $notification;
+        return $this;
+    }
+
+    /**
+     * @param array $android
+     * @return static $this
+     */
+    public function android(array $android)
+    {
+        $this->message['android'] = $android;
         return $this;
     }
 
@@ -89,7 +99,9 @@ class CloudMessage implements BaseMessage
             );
 
         }
-        return $this->message;
+        return [
+            'message' => $this->message,
+        ];
     }
 
     /**

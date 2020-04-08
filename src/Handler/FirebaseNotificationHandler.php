@@ -41,7 +41,7 @@ class FirebaseNotificationHandler extends BaseHandler
      * @param Notification $notification
      * @return mixed|\Psr\Http\Message\ResponseInterface
      */
-    public function send(Notification $notification)
+    public function send($notification)
     {
         $headers = $this->headers;
         $request = new Request('POST', $this->getSendUrl(), $headers, $notification->getNotificationPayload());

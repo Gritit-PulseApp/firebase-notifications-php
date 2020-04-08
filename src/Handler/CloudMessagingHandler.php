@@ -56,10 +56,10 @@ class CloudMessagingHandler extends BaseHandler
      * @throws NotificationParameterException
      * @return mixed|\Psr\Http\Message\ResponseInterface
      */
-    public function send(CloudMessage $message)
+    public function send($message)
     {
         $headers = $this->headers;
         $request = new Request('POST', $this->getSendUrl(), $headers, $message->getMessagePayload());
-        return $this->client->send($request, ['timeout' => 1]);
+        return $this->client->send($request, ['timeout' => 2]);
     }
 }
